@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Autowire by using the bean name. Spring will try to match bean name with class name. -->
+    <bean id="Video" class="com.springdemo.springframework.autowire.Video" autowire="byName"  >
+
+    </bean>
+    <!--Current video identifier-->
+    <bean id="videoId" class="com.springdemo.springframework.autowire.VideoId">
+        <property name="videoIdentifier" value="YqoQ_y5R7-A / KJWC 3RCW H4WT"/>
+        <property name="platformIdentifier" value="https://www.youtube.com"/>
+    </bean>
+    <!--Current connection speed-->
+    <bean id="connectionSpeed" class="com.springdemo.springframework.autowire.ConnectionSpeed">
+        <property name="speed" value="54394 Kbps"/>
+    </bean>
+    <!--Video dimensions-->
+    <bean id="viewPort" class="com.springdemo.springframework.autowire.ViewPort">
+        <property name="viewPortStat" value= "913x514*1.1"/>
+    </bean>
+
+    <bean id="UploadOn" class="com.springdemo.springframework.autowire.UploadOn" autowire="constructor">
+    </bean>
+
+    <bean id="Date" class="com.springdemo.springframework.autowire.Date"/>
+</beans>

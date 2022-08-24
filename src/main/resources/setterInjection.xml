@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="OuterClass" class="com.springdemo.springframework.setterInjection.OuterClass">
+    <!--Set property of outclass using setter-->
+        <property name="innerClass" ref="InnerClass"></property>
+    </bean>
+
+    <bean id="InnerClass" class="com.springdemo.springframework.setterInjection.InnerClass">
+    <!--No properties/constructor-args for inner class.-->
+    </bean>
+</beans>

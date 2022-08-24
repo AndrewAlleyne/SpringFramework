@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Manager" class="com.springdemo.springframework.springCollections.Manager">
+        <property name="employeesList">
+                <list>
+                    <ref bean="employee"/>
+                    <ref bean="employee2"/>
+                </list>
+        </property>
+    </bean>
+
+    <bean id="employee" class="com.springdemo.springframework.springCollections.Employees">
+        <property name="firstName" value="Andrew"/>
+        <property name="lastName" value="Alleyne"/>
+    </bean>
+
+    <bean id="employee2" class="com.springdemo.springframework.springCollections.Employees">
+        <property name="firstName" value="Sam"/>
+        <property name="lastName" value="Kluswe"/>
+    </bean>
+</beans>

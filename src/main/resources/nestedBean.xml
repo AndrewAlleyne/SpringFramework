@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <alias name="Phone" alias="userPhone"/>
+<!--Used alias here for pedagogical purposes. You can remove if needed and have spring look for the bean by the beans id in nestedBean.xml-->
+    <!--Nested beans-->
+    <bean id="Phone" class="com.springdemo.springframework.nestedBeans.Phone">
+        <!-- Set Carrier properties -->
+       <property name="carrier">
+            <bean class="com.springdemo.springframework.nestedBeans.Carrier">
+                <property name="name" value="T-Mobile"/>
+            </bean>
+       </property>
+
+        <!-- Set Model properties -->
+        <property name="model">
+            <bean class="com.springdemo.springframework.nestedBeans.Model">
+                <property name="name" value="Apple iPhone 20"/>
+            </bean>
+       </property>
+    </bean>
+
+</beans>
